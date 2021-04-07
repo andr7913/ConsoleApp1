@@ -6,6 +6,7 @@ namespace anagramsolver
 {
     public class anagramsolver:Ianagramsolver
     {
+        public List<string> dictionaryList = new List<string>();
         public void SetDictionary(List<string> dictionary)
         {
             // the file has to be in the root folder in your project
@@ -14,6 +15,8 @@ namespace anagramsolver
 
             foreach (string line in lines)
                 dictionary.Add(line);
+
+            this.dictionaryList = dictionary;
         }
 
         public string Getbestvalueword(List<char> letters)
@@ -28,7 +31,18 @@ namespace anagramsolver
 
         public void addWord(string newWord)
         {
-            throw new System.NotImplementedException();
+            foreach (var line in dictionaryList)
+            {
+                if (line.Equals(newWord))
+                {
+                    Console.WriteLine("this word exist already");
+                }
+                else
+                {
+                    dictionaryList.Add(newWord);
+                }
+            }
+           
         }
 
         public void removeWord(string removeWord)
