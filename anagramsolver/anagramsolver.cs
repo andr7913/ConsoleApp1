@@ -8,8 +8,11 @@ namespace anagramsolver
     {
         public void SetDictionary(List<string> dictionary)
         {
-            var filepath = "C:\\Users\\andre\\source\\repos\\ConsoleApp1\\anagramsolver\\Data\\3000_Common_words.txt";
-            string[] lines = File.ReadAllLines(filepath);
+            string fileName = "3000_Common_words.txt";
+            //string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Data\", fileName);
+
+            var path = "@../Data/3000_Common_words.txt";
+            string[] lines = File.ReadAllLines(path);
 
             foreach (string line in lines)
                 dictionary.Add(line);
