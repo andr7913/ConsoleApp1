@@ -18,7 +18,7 @@ static class Program
     {
         var total = collection.Count();
 
-        // provided str "cat" get all subsets c, a, ca, at, etc (really nonefficient)
+        // provided str text get all subsets
         var subsets = collection.Permutations()
             .SelectMany(c => Enumerable.Range(1, total).Select(i => c.Take(i)))
             .Distinct(new CollectionComparer<T>());
