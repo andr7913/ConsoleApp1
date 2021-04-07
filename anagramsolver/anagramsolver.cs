@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace anagramsolver
 {
@@ -6,7 +8,11 @@ namespace anagramsolver
     {
         public void SetDictionary(List<string> dictionary)
         {
-            throw new System.NotImplementedException();
+            var filepath = "C:\\Users\\andre\\source\\repos\\ConsoleApp1\\anagramsolver\\Data\\3000_Common_words.txt";
+            string[] lines = File.ReadAllLines(filepath);
+
+            foreach (string line in lines)
+                dictionary.Add(line);
         }
 
         public string Getbestvalueword(List<char> letters)
