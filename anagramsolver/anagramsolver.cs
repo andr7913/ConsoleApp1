@@ -6,7 +6,9 @@ namespace anagramsolver
 {
     public class anagramsolver:Ianagramsolver
     {
+        // global list 
         public List<string> dictionaryList = new List<string>();
+
         public void SetDictionary(List<string> dictionary)
         {
             // the file has to be in the root folder in your project
