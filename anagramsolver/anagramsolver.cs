@@ -47,7 +47,18 @@ namespace anagramsolver
 
         public void removeWord(string removeWord)
         {
-            throw new System.NotImplementedException();
+            foreach (var line in dictionaryList)
+            {
+                if (line.Equals(removeWord))
+                {
+                    dictionaryList.Remove(removeWord);
+                }
+                else
+                {
+                    Console.WriteLine("ordet findes ikke ");
+                }
+            }
+            
         }
     }
 }
