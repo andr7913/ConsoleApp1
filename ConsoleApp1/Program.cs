@@ -16,6 +16,15 @@ static class Program
             Console.WriteLine(line);
         }
 
+
+        // anagramsolver.removeWord("zone");
+
+         foreach (var line in dictionary)
+         {
+             Console.WriteLine(line);
+         }
+
+
         //Console.WriteLine("Write something: ");
         //var text = Console.ReadLine();
         //var res = anagramCal.Anagrams(text);

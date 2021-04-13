@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace anagramsolver
 {
@@ -33,33 +34,27 @@ namespace anagramsolver
 
         public void addWord(string newWord)
         {
-            foreach (var line in dictionaryList)
-            {
-                if (line.Equals(newWord))
-                {
-                    Console.WriteLine("this word exist already");
-                }
-                else
+            //foreach (var line in dictionaryList.ToList())
+            //{
+                if (!dictionaryList.Contains(newWord))
                 {
                     dictionaryList.Add(newWord);
                 }
-            }
+                
+               
+           // }
            
         }
 
         public void removeWord(string removeWord)
         {
-            foreach (var line in dictionaryList)
-            {
-                if (line.Equals(removeWord))
+            
+                if (dictionaryList.Contains(removeWord))
                 {
                     dictionaryList.Remove(removeWord);
                 }
-                else
-                {
-                    Console.WriteLine("ordet findes ikke ");
-                }
-            }
+               
+            
             
         }
     }
