@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace anagramsolver
 {
-    public class anagramsolver:Ianagramsolver
+    public class AnagramSolver:IAnagramSolver
     {
         // global list 
         public List<string> dictionaryList = new List<string>();
@@ -22,40 +22,105 @@ namespace anagramsolver
             this.dictionaryList = dictionary;
         }
 
-        public string Getbestvalueword(List<char> letters)
+        public string GetBestValueWord(List<char> letters)
         {
             throw new System.NotImplementedException();
         }
 
-        public List<string> getTopwords(List<char> letters, int Topcount)
+        public List<string> GetTopWords(List<char> letters, int topCount)
         {
             throw new System.NotImplementedException();
         }
 
-        public void addWord(string newWord)
+        public void AddWord(string newWord)
         {
-            //foreach (var line in dictionaryList.ToList())
-            //{
-                if (!dictionaryList.Contains(newWord))
-                {
+            if (!dictionaryList.Contains(newWord))
+            {
                     dictionaryList.Add(newWord);
-                }
-                
-               
-           // }
-           
+            }
         }
 
-        public void removeWord(string removeWord)
+        public void RemoveWord(string removeWord)
         {
-            
-                if (dictionaryList.Contains(removeWord))
-                {
-                    dictionaryList.Remove(removeWord);
-                }
-               
-            
-            
+            if (dictionaryList.Contains(removeWord))
+            {
+                dictionaryList.Remove(removeWord);
+            }
+        }
+
+        private int CharacterPoints(int topScore)
+        {
+            topScore = 0;
+
+            List<char> score1 = new List<char>()
+            {
+                'e', 'a', 'i', 'o', 'n', 'r', 't', 'l', 's', 'u'
+            };
+
+            foreach (var letter in score1)
+            {
+                topScore++;
+            }
+
+            List<char> score2 = new List<char>()
+            {
+                'd', 'g'
+            };
+
+            foreach (var letter in score2)
+            {
+                topScore += 2;
+            }
+
+            List<char> score3 = new List<char>()
+            {
+                'b', 'c', 'm', 'p'
+            };
+
+            foreach (var letter in score3)
+            {
+                topScore += 3;
+            }
+            List<char> score4 = new List<char>()
+            {
+                'f', 'h', 'v', 'w', 'y'
+            };
+
+            foreach (var letter in score4)
+            {
+                topScore += 4;
+            }
+            List<char> score5 = new List<char>()
+            {
+                'k'
+            };
+
+            foreach (var letter in score5)
+            {
+                topScore += 5;
+            }
+
+            List<char> score8 = new List<char>()
+            {
+                'j', 'x'
+            };
+
+            foreach (var letter in score8)
+            {
+                topScore += 8;
+            }
+
+            List<char> score10 = new List<char>()
+            {
+                'q', 'z'
+            };
+
+            foreach (var letter in score10)
+            {
+                topScore += 10;
+            }
+
+            return topScore;
         }
     }
 }

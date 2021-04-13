@@ -2,12 +2,12 @@
 
 namespace anagramsolver
 {
-    public interface Ianagramsolver
+    public interface IAnagramSolver
     {
         public void SetDictionary(List<string> dictionary);
-        public string Getbestvalueword(List<char> letters);
-        public List<string> getTopwords(List<char> letters, int Topcount);
-        public void addWord(string newWord);
-        public void removeWord(string removeWord);
+        public string GetBestValueWord(List<char> letters);
+        public List<string> GetTopWords(List<char> letters, int topCount);
+        public void AddWord(string newWord);
+        public void RemoveWord(string removeWord);
     }
 }
